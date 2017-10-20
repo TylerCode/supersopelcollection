@@ -23,7 +23,7 @@ import re
 def piglatin(bot, trigger):
     inputString = trigger.group(2)
     inputString = inputString.lower()
-    bot.say(doTheBiz(inputString))
+    bot.reply(doTheBiz(inputString))
 
 
 
