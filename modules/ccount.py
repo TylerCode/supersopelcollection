@@ -15,17 +15,19 @@ Released under WTFPL v2
 
 """
 
+# Currently this isn't working.
+# havent had a minute to investigate
+
 import sopel.module
-import random
+
+letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','1','2','3','4','5','6','7','8','9','0','.',',','!','?','"',"'",'-','_','&',';',':','*','(',')']
+counts = []
 
 @sopel.module.commands('ccount', 'characters', 'charcount')
 def vcount(bot, trigger):
     #Input processing
     inputString = trigger.group(2)
     inputString = inputString.lower()
-    letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','1','2','3','4','5','6','7','8','9','0','.',',','!','?','"',"'",'-','_','&',';',':','*','(',')']
-    counts = []
-
     countThatShiz(inputString)
 
     loops = 0
