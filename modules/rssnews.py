@@ -3,10 +3,10 @@
 This module will get the latest from RSS Feeds.
 
 Usage: 
-.news<type>
+.rssnews <category>
 
 Example:
-.newsworld or .newstech
+.rssnews hack or .rssnews tech
 News....
 
 Written by TylerCode
@@ -18,25 +18,21 @@ import feedparser
 import sopel.module
 
 # You can customize these both
-intro = "Here is the latest on that topic"
+intro = "Here is the latest news on that topic"
 outtro = "That's all for now."
 
-@sopel.module.commands('newsworld')
+@sopel.module.commands('rssnews')
+@sopel.module.example('.rssnews world')
 def worldnews(bot, trigger):
-    intro = "The latest stories from the World section of the BBC News."
-    rss_url = 'http://feeds.bbci.co.uk/news/world/rss.xml'
-    getNews(rss_url,bot)
-
-@sopel.module.commands('newstech')
-def worldnews(bot, trigger):
-    intro = "The latest stories from the Technology section of the BBC News."
-    rss_url = 'http://feeds.bbci.co.uk/news/technology/rss.xml'
-    getNews(rss_url,bot)
-
-@sopel.module.commands('newshack')
-def worldnews(bot, trigger):
-    intro = "The latest stories from Hacker News."
-    rss_url = 'https://news.ycombinator.com/rss'
+    if(trigger.group(2) == 'world'):
+        intro = "Here are the latest stories from the World section of the BBC News."
+        rss_url = 'http://feeds.bbci.co.uk/news/world/rss.xml'
+    if(trigger.group(2) == 'tech'):
+        intro = "Here are the latest stories from the Technology section of the BBC News."
+        rss_url = 'http://feeds.bbci.co.uk/news/technology/rss.xml'
+    if(trigger.group(2) == 'hack'):
+        intro = "This is the latest stories from Hacker News."
+        rss_url = 'https://news.ycombinator.com/rss'
     getNews(rss_url,bot)
 
 
