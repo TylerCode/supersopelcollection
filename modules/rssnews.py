@@ -17,13 +17,14 @@ Released under WTFPL v2
 import feedparser
 import sopel.module
 
-# You can customize these both
-intro = "Here is the latest news on that topic"
+# You can customize this
 outtro = "That's all for now."
 
 @sopel.module.commands('rssnews')
 @sopel.module.example('.rssnews world')
 def worldnews(bot, trigger):
+    intro = "Here is the latest news on that topic"
+
     if(trigger.group(2) == 'world'):
         intro = "Here are the latest stories from the World section of the BBC News."
         rss_url = 'http://feeds.bbci.co.uk/news/world/rss.xml'
@@ -42,10 +43,13 @@ def worldnews(bot, trigger):
     if(trigger.group(2) == 'ubuntu'):
         intro = "Slashdot news!"
         rss_url = 'http://feeds.feedburner.com/d0od'
-    getNews(rss_url,bot)
+    if(trigger.group(2) == ''):
+        bot.reply("Please specify a topic, for example: .rssnews world or .rssnews tech")
+    else:
+        getNews(rss_url,bot,intro)
 
 
-def getNews(rss_url,bot):
+def getNews(rss_url,bot,intro):
     rss = feedparser.parse(rss_url)
     title1 = rss.entries[0]['title'] + '.  '
     desc1 = rss.entries[0]['description'] + '.  '
