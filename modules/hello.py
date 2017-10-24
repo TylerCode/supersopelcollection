@@ -6,7 +6,7 @@ Includes a response to the person who called it for example:
 Hello, <username>
 
 Written by TylerCode
-Released under MIT
+Released into public domain under the unlicense.
 
 """
 

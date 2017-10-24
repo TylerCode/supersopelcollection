@@ -63,4 +63,4 @@ This is probably the module I've spent the most thought on and probably the most
 
 # License
 
-This code is released under the MIT License
+Released into public domain under the unlicense.

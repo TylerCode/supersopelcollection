@@ -11,7 +11,7 @@ Example:
 .ccount taco time
 
 Written by TylerCode
-Released under MIT
+Released into public domain under the unlicense.
 
 """
 

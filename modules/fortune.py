@@ -10,7 +10,7 @@ Example:
 "Ignore all previous Fortunes"
 
 Written by TylerCode
-Released under MIT
+Released into public domain under the unlicense.
 
 """
 

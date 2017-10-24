@@ -12,7 +12,7 @@ Example:
 atthay urritobay asway erribletay
 
 Written by TylerCode
-Released under MIT
+Released into public domain under the unlicense.
 
 """
 
