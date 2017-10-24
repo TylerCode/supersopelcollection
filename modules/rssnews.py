@@ -31,23 +31,23 @@ def worldnews(bot, trigger):
         rss_url = 'http://feeds.bbci.co.uk/news/world/rss.xml'
         valid = True
     if(trigger.group(2) == 'tech'):
-        intro = "Here are the latest stories from the Technology section of the BBC News."
+        intro = "Stories from the Technology section of BBC News."
         rss_url = 'http://feeds.bbci.co.uk/news/technology/rss.xml'
         valid = True
     if(trigger.group(2) == 'hack'):
-        intro = "This is the latest stories from Hacker News."
+        intro = "Latest from Hacker News"
         rss_url = 'https://news.ycombinator.com/rss'
         valid = True
     if(trigger.group(2) == 'slash'):
-        intro = "Slashdot news!"
+        intro = "Latest from Slashdot"
         rss_url = 'http://rss.slashdot.org/Slashdot/slashdotMain'
         valid = True
     if(trigger.group(2) == 'linux'):
-        intro = "Slashdot news!"
+        intro = "Linux news from Slashdot"
         rss_url = 'http://rss.slashdot.org/Slashdot/slashdotLinux'
         valid = True
     if(trigger.group(2) == 'ubuntu'):
-        intro = "Slashdot news!"
+        intro = "News from OMG Ubuntu!"
         rss_url = 'http://feeds.feedburner.com/d0od'
         valid = True
 
