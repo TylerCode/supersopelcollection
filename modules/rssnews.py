@@ -51,7 +51,7 @@ def worldnews(bot, trigger):
         rss_url = 'http://feeds.feedburner.com/d0od'
         valid = True
 
-    if(trigger.group(2) == 'list')
+    if(trigger.group(2) == 'list'):
         bot.reply("world tech hack slash linux ubuntu")
 
     if(valid == True):
