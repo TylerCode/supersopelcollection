@@ -4,6 +4,8 @@ This is just a place to share some sopel modules I've written. Some of these are
 
 # Installation
 
+### Fresh Install
+
 Installation is a snap. 
 
 - Download or clone this repo to the server or machine running sopel.
@@ -11,6 +13,17 @@ Installation is a snap.
 - Restart Sopel
 
 The commands will compile and be available when Sopel reconnects. It will also show up in .help lists
+
+### Updating an install
+
+Updating is **almost** as easy as installing.
+
+- Remove old .py and .pyc files from the ~/.sopel/modules folder. (Only remove the ones you are replacing/updating)
+- Download or clone this repo to the server or machine running sopel.
+- Move the contents of Module (the .py files) into ~/.sopel/modules
+- Restart Sopel
+
+The commands will up updated and ready to use. 
 
 # Modules
 
