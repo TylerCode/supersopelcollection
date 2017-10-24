@@ -36,6 +36,12 @@ def worldnews(bot, trigger):
     if(trigger.group(2) == 'slash'):
         intro = "Slashdot news!"
         rss_url = 'http://rss.slashdot.org/Slashdot/slashdotMain'
+    if(trigger.group(2) == 'linux'):
+        intro = "Slashdot news!"
+        rss_url = 'http://rss.slashdot.org/Slashdot/slashdotLinux'
+    if(trigger.group(2) == 'ubuntu'):
+        intro = "Slashdot news!"
+        rss_url = 'http://feeds.feedburner.com/d0od'
     getNews(rss_url,bot)
 
 
