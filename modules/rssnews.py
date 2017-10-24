@@ -23,30 +23,42 @@ outtro = "That's all for now."
 @sopel.module.commands('rssnews')
 @sopel.module.example('.rssnews world')
 def worldnews(bot, trigger):
+    valid = False
     intro = "Here is the latest news on that topic"
 
     if(trigger.group(2) == 'world'):
         intro = "Here are the latest stories from the World section of the BBC News."
         rss_url = 'http://feeds.bbci.co.uk/news/world/rss.xml'
+        valid = True
     if(trigger.group(2) == 'tech'):
         intro = "Here are the latest stories from the Technology section of the BBC News."
         rss_url = 'http://feeds.bbci.co.uk/news/technology/rss.xml'
+        valid = True
     if(trigger.group(2) == 'hack'):
         intro = "This is the latest stories from Hacker News."
         rss_url = 'https://news.ycombinator.com/rss'
+        valid = True
     if(trigger.group(2) == 'slash'):
         intro = "Slashdot news!"
         rss_url = 'http://rss.slashdot.org/Slashdot/slashdotMain'
+        valid = True
     if(trigger.group(2) == 'linux'):
         intro = "Slashdot news!"
         rss_url = 'http://rss.slashdot.org/Slashdot/slashdotLinux'
+        valid = True
     if(trigger.group(2) == 'ubuntu'):
         intro = "Slashdot news!"
         rss_url = 'http://feeds.feedburner.com/d0od'
-    if(trigger.group(2) == ''):
-        bot.reply("Please specify a topic, for example: .rssnews world or .rssnews tech")
-    else:
+        valid = True
+
+    if(trigger.group(2) == 'list')
+        bot.reply("world tech hack slash linux ubuntu")
+
+    if(valid == True):
         getNews(rss_url,bot,intro)
+    else:
+        bot.reply("Please specify a topic, for example: .rssnews world or .rssnews tech. For a full list, type .rssnews list")
+        
 
 
 def getNews(rss_url,bot,intro):
