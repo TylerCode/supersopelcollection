@@ -32,10 +32,15 @@ The commands will up updated and ready to use.
 CCount will count the occurence of every character in a string of text. So for example, if you did the command ".ccount hello there" it would come back with the following.
 
 > e - 3
+
 > h - 2
+
 > l - 2
+
 > o - 1
+
 > r - 1
+
 > t - 1
 
 It's not particularly useful but fin none the less.
