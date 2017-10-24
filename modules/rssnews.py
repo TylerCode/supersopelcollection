@@ -10,7 +10,7 @@ Example:
 News....
 
 Written by TylerCode
-Released under WTFPL v2
+Released under MIT
 
 """
 

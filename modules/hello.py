@@ -6,7 +6,7 @@ Includes a response to the person who called it for example:
 Hello, <username>
 
 Written by TylerCode
-Released under WTFPL v2
+Released under MIT
 
 """
 
