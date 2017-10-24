@@ -33,6 +33,9 @@ def worldnews(bot, trigger):
     if(trigger.group(2) == 'hack'):
         intro = "This is the latest stories from Hacker News."
         rss_url = 'https://news.ycombinator.com/rss'
+    if(trigger.group(2) == 'slash'):
+        intro = "Slashdot news!"
+        rss_url = 'http://rss.slashdot.org/Slashdot/slashdotMain'
     getNews(rss_url,bot)
 
 
@@ -46,6 +49,8 @@ def getNews(rss_url,bot):
     desc3 = rss.entries[2]['description'] + '.  '
     title4 = rss.entries[3]['title'] + '.  '
     desc4 = rss.entries[3]['description'] + '.  ' 
+    title5 = rss.entries[4]['title'] + '.  '
+    desc5 = rss.entries[4]['description'] + '.  ' 
 
     bot.say(intro)
     bot.say("===========")
@@ -60,5 +65,8 @@ def getNews(rss_url,bot):
     bot.say("===========")
     bot.say(title4 + ": ")
     bot.say(desc4)
+    bot.say("===========")
+    bot.say(title5 + ": ")
+    bot.say(desc5)
     bot.say("===========")
     bot.say(outtro)
