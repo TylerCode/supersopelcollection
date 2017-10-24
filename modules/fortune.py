@@ -42,4 +42,4 @@ def hello(bot, trigger):
         'If you can read this, you are not illeterate.',
         'Never bet on Red.',
         'Bloom where you ar- OMG Is that an alien behind you?'))
-    bot.reply(verb + ', ' + trigger.nick)
+    bot.reply(verb)
