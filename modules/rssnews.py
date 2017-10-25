@@ -74,6 +74,13 @@ def getNews(rss_url,bot,intro):
     title5 = rss.entries[4]['title'] + '.  '
     desc5 = rss.entries[4]['description'] + '.  ' 
 
+    desc1 = extractLinks(desc1)
+    desc2 = extractLinks(desc2)
+    desc3 = extractLinks(desc3)
+    desc4 = extractLinks(desc4)
+    desc5 = extractLinks(desc5)
+        
+
     bot.say(intro)
     bot.say("===========")
     bot.say(title1 + ": ")
@@ -92,3 +99,11 @@ def getNews(rss_url,bot,intro):
     bot.say(desc5)
     bot.say("===========")
     bot.say(outtro)
+
+def extractLinks(inputString):
+    if("<a" in inputString):
+        offset = inputString.find("<a")
+        offset2 = inputString.find("/a")
+        return inputString[offset:offset2]
+    else:
+        return inputString
