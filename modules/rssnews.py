@@ -19,6 +19,7 @@ import sopel.module
 
 # You can customize this
 outtro = "That's all for now."
+summary = False # Turns off the link extraction. 
 
 @sopel.module.commands('rssnews')
 @sopel.module.example('.rssnews world')
@@ -74,12 +75,12 @@ def getNews(rss_url,bot,intro):
     title5 = rss.entries[4]['title'] + '.  '
     desc5 = rss.entries[4]['description'] + '.  ' 
 
-    desc1 = extractLinks(desc1)
-    desc2 = extractLinks(desc2)
-    desc3 = extractLinks(desc3)
-    desc4 = extractLinks(desc4)
-    desc5 = extractLinks(desc5)
-        
+    if(summary):
+        desc1 = extractLinks(desc1)
+        desc2 = extractLinks(desc2)
+        desc3 = extractLinks(desc3)
+        desc4 = extractLinks(desc4)
+        desc5 = extractLinks(desc5)
 
     bot.say(intro)
     bot.say("===========")
